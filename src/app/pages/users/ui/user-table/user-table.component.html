@@ -1,0 +1,21 @@
+<div class="table">
+  <div class="user-card header">
+    <div class="name">name</div>
+    <div class="email">email</div>
+    <div class="active">active</div>
+  </div>
+
+  @if (users(); as users) {
+    @for (user of users; track $index) {
+      <div class="user-card" (click)="selectUser.emit(user)">
+        <div class="name">{{ user.name }}</div>
+        <div class="email">{{ user.email }}</div>
+        <div class="active">{{ user.active ? 'Активный' : 'Инактивный' }}</div>
+      </div>
+    } @empty {
+      Пользователь не найден
+    }
+  } @else {
+    <div class="loader">loading...</div>
+  }
+</div>

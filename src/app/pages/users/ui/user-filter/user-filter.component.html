@@ -1,0 +1,37 @@
+<div class="filter">
+  <form [formGroup]="filter()">
+    <input placeholder="Поиск..." type="text" formControlName="search" class="search" />
+
+    <div class="radios">
+      <button
+        class="radio"
+        [ngClass]="{
+          selected: filter().controls.active.value === null,
+        }"
+        (click)="setActive(null)"
+      >
+        Все
+      </button>
+
+      <button
+        class="radio"
+        [ngClass]="{
+          selected: filter().controls.active.value === true,
+        }"
+        (click)="setActive(true)"
+      >
+        Активный
+      </button>
+
+      <button
+        class="radio"
+        [ngClass]="{
+          selected: filter().controls.active.value === false,
+        }"
+        (click)="setActive(false)"
+      >
+        Инактивный
+      </button>
+    </div>
+  </form>
+</div>

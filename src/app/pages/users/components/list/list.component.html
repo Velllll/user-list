@@ -1,0 +1,9 @@
+<div class="list">
+  <app-user-filter [filter]="filter" />
+
+  <app-user-table [users]="users$ | async" (selectUser)="selectUser($event)" />
+
+  @if (selectedUser$ | async; as selectedUser) {
+    <app-user-sidebar (close)="selectUser(null)" [user]="selectedUser" />
+  }
+</div>

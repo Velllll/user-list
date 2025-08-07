@@ -1,0 +1,13 @@
+.user-card {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  padding: 4px;
+  margin-bottom: 4px;
+  cursor: pointer;
+}
+
+.header {
+  margin-bottom: 8px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid #292929;
+}

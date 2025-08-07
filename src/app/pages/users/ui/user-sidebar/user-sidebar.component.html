@@ -1,0 +1,5 @@
+<div class="overflov" (click)="close.emit()">
+  <div class="user-info" (click)="$event.stopPropagation()">
+    {{ user().email }}
+  </div>
+</div>
